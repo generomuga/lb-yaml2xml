@@ -10,10 +10,10 @@ def get_file(**kwargs):
     for line in file:
 
         if '#' in line:
-            comment = line.strip()
-
+            comment = str(line).strip()
+    
         if 'file' in line:
-            key, file_path = line.strip().split(':')
+            key, file_path = str(line).strip().split(':')
             files.append((comment, file_path))
 
     return files
@@ -55,7 +55,7 @@ def get_filename(filename):
 
 if __name__ == '__main__':
     
-    filepath = '/home/gromuga/Documents/b4r/b4r-db/build/changesets/20.03/db-changelog-database-version-20.03.yml'
+    filepath = '/home/gromuga/Documents/b4r/b4r-db/build/changesets/21.03/db-changelog-database-version-21.03.yml'
     filename = ntpath.basename(filepath)
     filename = get_filename(filename)
 
