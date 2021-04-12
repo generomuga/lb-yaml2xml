@@ -39,8 +39,7 @@ def construct_xml(**kwargs):
     close_comment = ' -->'
 
     for comment,path in file_paths:
-        
-        
+
         include_str = open_include+path.strip()+close_include
         comment_str = open_comment+comment.replace('#','')+close_comment
 
